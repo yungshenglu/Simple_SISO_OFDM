@@ -1,0 +1,8 @@
+# vscode.config
+.vscode
+
+# object file
+*.m~
+
+# Binary file
+*.bin
