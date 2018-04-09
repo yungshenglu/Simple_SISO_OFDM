@@ -91,10 +91,10 @@ function [ SNR_decoded_dB , BER_decoded ] = decode( SNR_simulated )
             wl_interfaceCmd(node_rx, RX_RF_ALL, 'rx_gain_mode', 'automatic');
             wl_basebandCmd(nodes, 'agc_target', -13);
         else
-            wl_interfaceCmd(node_rx, RX_RF_ALL, 'rx_gain_mode', 'manual');
+            wl_interfaceCmd( node_rx , RX_RF_ALL, 'rx_gain_mode', 'manual' );
             RxGainRF = 2;                  % Rx RF Gain in [1:3]
             RxGainBB = 12;                 % Rx Baseband Gain in [0:31]
-            wl_interfaceCmd(node_rx, RX_RF_ALL, 'rx_gains', RxGainRF, RxGainBB);
+            wl_interfaceCmd( node_rx , RX_RF_ALL , 'rx_gains' , RxGainRF , RxGainBB );
         end
 
         % Get parameters from the node

@@ -56,15 +56,15 @@ function [ output ] = signal_gen( SNR_simulated )
         trig_out_ids = wl_getTriggerOutputIDs(nodes(1));
 
         % For both nodes, we will allow Ethernet to trigger the buffer baseband and the AGC
-        wl_triggerManagerCmd(nodes, 'output_config_input_selection', [trig_out_ids.BASEBAND, trig_out_ids.AGC], [trig_in_ids.ETH_A]);
+        wl_triggerManagerCmd( nodes , 'output_config_input_selection' , [ trig_out_ids.BASEBAND , trig_out_ids.AGC ] , [ trig_in_ids.ETH_A ] );
 
         % Set the trigger output delays.
-        nodes.wl_triggerManagerCmd('output_config_delay', [trig_out_ids.BASEBAND], 0);
-        nodes.wl_triggerManagerCmd('output_config_delay', [trig_out_ids.AGC], TRIGGER_OFFSET_TOL_NS);
+        nodes.wl_triggerManagerCmd( 'output_config_delay', [ trig_out_ids.BASEBAND] , 0 );
+        nodes.wl_triggerManagerCmd( 'output_config_delay', [ trig_out_ids.AGC ] , TRIGGER_OFFSET_TOL_NS );
 
         % Get IDs for the interfaces on the boards. 
-        ifc_ids_TX = wl_getInterfaceIDs(node_tx);
-        ifc_ids_RX = wl_getInterfaceIDs(node_rx);
+        ifc_ids_TX = wl_getInterfaceIDs( node_tx );
+        ifc_ids_RX = wl_getInterfaceIDs( node_rx );
 
         % Set up the TX / RX nodes and RF interfaces
         TX_RF     = ifc_ids_TX.RF_A;
@@ -76,10 +76,10 @@ function [ output ] = signal_gen( SNR_simulated )
         RX_RF_ALL = ifc_ids_RX.RF_ALL;
 
         % Set up the interface for the experiment
-        wl_interfaceCmd(node_tx, TX_RF_ALL, 'channel', 2.4, CHANNEL);
-        wl_interfaceCmd(node_rx, RX_RF_ALL, 'channel', 2.4, CHANNEL);
+        wl_interfaceCmd( node_tx , TX_RF_ALL , 'channel' , 2.4 , CHANNEL );
+        wl_interfaceCmd( node_rx , RX_RF_ALL , 'channel' , 2.4 , CHANNEL );
 
-        wl_interfaceCmd(node_tx, TX_RF_ALL, 'tx_gains', 3, 30);
+        wl_interfaceCmd( node_tx , TX_RF_ALL , 'tx_gains' , 3 , 30 );
 
         if USE_AGC
             wl_interfaceCmd(node_rx, RX_RF_ALL, 'rx_gain_mode', 'automatic');
@@ -272,7 +272,7 @@ function [ output ] = signal_gen( SNR_simulated )
 
         % AWGN:
         rx_vec_air = [ tx_vec_air , zeros( 1 , ceil( ( TRIGGER_OFFSET_TOL_NS * 1e-9 ) / ( 1 / SAMP_FREQ ) ) ) ];
-        % Step 3. Simulated SNR: 5, 10, 15, 20 and 25 dB.
+        % David: Step 3. Simulated SNR: 5, 10, 15, 20 and 25 dB.
         SNR_dB = SNR_simulated;
         SNR = 10 ^ ( SNR_dB / 10 );
         Pn = ( mean( abs( rx_vec_air ) .^ 2 ) ) / SNR;
