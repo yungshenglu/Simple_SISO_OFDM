@@ -284,14 +284,14 @@ function [ output ] = signal_gen( SNR_simulated )
 
 
     %% Output files
-    file = fopen( 'tx_data.bin' , 'w' );
+    file = fopen( '../out/tx_data.bin' , 'w' );
     fwrite( file , tx_data , 'int' );
     fclose( file );
 
     z_real = real( tx_syms_mat );
     z_imag = imag( tx_syms_mat );
     adjacent = [ z_real , z_imag ];
-    file = fopen( 'tx_syms_mat.bin' , 'w' );
+    file = fopen( '../out/tx_syms_mat.bin' , 'w' );
     fwrite( file , adjacent , 'float' );
     fclose( file );
 
@@ -300,7 +300,7 @@ function [ output ] = signal_gen( SNR_simulated )
         complex_array( 2 * j - 1 ) = real( rx_vec_air( j ) );
         complex_array( 2 * j ) = imag( rx_vec_air( j ) );
     end
-    file = fopen( 'rx_vec_air.bin' , 'w' );
+    file = fopen( '../out/rx_vec_air.bin' , 'w' );
     fwrite( file , complex_array , 'float' );
     fclose( file );
 end

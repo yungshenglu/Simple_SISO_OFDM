@@ -137,15 +137,15 @@ function [ SNR_decoded_dB , BER_decoded ] = decode( SNR_simulated )
     lts_t = ifft( lts_f , 64 );
 
     %% Load files
-    tx_data = read_real_binary( 'tx_data.bin' );
+    tx_data = read_real_binary( '../out/tx_data.bin' );
 
-    file = fopen( 'tx_syms_mat.bin' );
+    file = fopen( '../out/tx_syms_mat.bin' );
     same_real = fread( file , [ 48 , 500 ] , 'float' );
     same_imag = fread( file , [ 48 , 500 ] , 'float' );
     fclose( file );
     tx_syms_mat = complex( same_real , same_imag );
 
-    rx_vec_air = read_complex_binary( 'rx_vec_air.bin' );
+    rx_vec_air = read_complex_binary( '../out/rx_vec_air.bin' );
 
     % Define the preamble
     % Note: The STS symbols (short preamble) in the preamble meet the requirements needed by the
