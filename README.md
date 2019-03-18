@@ -1,17 +1,19 @@
-# Simple SISO OFDM MATLAB simulation
+# Simple SISO OFDM in Simulation
 
-[![License: IEEE](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+This repository is the assignment in NCTU course "Wireless Communication Systems 2018".
 
 This repository is going to simulate SISO OFDM with BPSK demodulation by using the example code on [WARPLab](https://warpproject.org/trac/wiki/WARPLab/Examples/OFDM) `wl_example_siso_ofdm_txrx.m​`
-*Notice that this repository is NCTU CS course lab of "Wireless Communication Systems 2018". If you are taking this course, please do not duplicate from this repository. All rights reserved.*
 
-## Introduction
+> **NOTCIE:** This repository is the assignment in NCTU course "Wireless Communication Systems 2018". If you are taking this course, please do not duplicate from this repository. All rights reserved.
+
+---
+## Description
 
 The sample code `wl_example_siso_ofdm_txrx.m​` follows the following steps.
 1. Generate OFDM transmit samples
 2. Send samples via WARP or Simulation transmission
 3. Decode the received samples
-4. Calculate SNR / channels and plot
+4. Calculate SNR/channels and plot
 
 In the part of signal generation,
 1. Generate preambles
@@ -26,13 +28,12 @@ In the part of decoding,
 1. Packet detection
 2. CFO correction (useless in simulation)
 3. Channel estimation
-4. Remove CP
+4. Remove CP (Cyclic Prefix)
 5. Convert time samples to frequency samples via FFT
 6. Decode frequency samples
 7. SFO correction
 
----
-## BPSK OFDM Simulation
+### BPSK OFDM Simulation
 
 1. Partition the example code to `signal_gen.m` and `decode.m`
     * `signal_gen.m`
@@ -42,7 +43,7 @@ In the part of decoding,
         * Output received time-domain samples to `rx_vec_air.bin`
     * `decode.m`
         * Load `tx_data.bin`, `tx_syms_mat.bin`, and `rx_vec_air.bin`
-        * Decode the signal and calculate BER / SNR
+        * Decode the signal and calculate BER/SNR
         * Plot the results
 2. Simulation channels with different SNR values
     * Modify the modulation to BPSK
@@ -59,16 +60,37 @@ In the part of decoding,
     * Plot other figures in the example code
 
 ---
-## TODO
+## Execution
 
-(Update soon.)
+> **NOTICE:** Make sure you have already installed MATLAB on your machine
+
+1. Open your MATLAB IDE and run `simulation.m` (take few minutes)
+2. If succeed, you will get some figures as follow:
+    * Tx waveform
+        ![](res/Tx_waveform.png)
+    * Rx waveform
+        ![](res/Rx_waveform.png)
+    * Channel Estimates
+        ![](res/Channel.png)
+    * Phase Error Estimates / Phase Correction for SFO
+        ![](res/Phase.png)
+    * LTS Correlation and Threshold
+        ![](res/LTS_correlation.png)
+    * Tx and Rx Constellations
+        ![](res/Constellations.png)
+    * EVM vs. Data Index / EVM vs. (Subcarrier & OFDM Symbol)
+        ![](res/EVM.png)
+    * Decoded SNR and BER
+        ![](res/SNR_BER.png)
 
 ---
 ## Contributor
 
-* [Yung-Sheng Lu](https://github.com/yungshenglu)
+* [David Lu](https://github.com/yungshenglu)
 
 ---
-> Notice that this repository is NCTU CS course lab of "Wireless Communication Systems 2018". If you are taking this course, please do not duplicate from this repository. All rights reserved.
+## License
 
-[![License: IEEE](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+> **NOTCIE:** This repository is the assignment in NCTU course "Wireless Communication Systems 2018". If you are taking this course, please do not duplicate from this repository. All rights reserved.
+
+[GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
