@@ -1,15 +1,13 @@
 # Simple SISO OFDM in Simulation
 
-This repository is the assignment in NCTU course "Wireless Communication Systems 2018".
-
-This repository is going to simulate SISO OFDM with BPSK demodulation by using the example code on [WARPLab](https://warpproject.org/trac/wiki/WARPLab/Examples/OFDM) `wl_example_siso_ofdm_txrx.m​`
+This repository is going to simulate SISO OFDM with BPSK demodulation by using the example code on [WARPLab](https://warpproject.org/trac/wiki/WARPLab/Examples/OFDM) `wl_example_siso_ofdm_txrx.m`
 
 > **NOTCIE:** This repository is the assignment in NCTU course "Wireless Communication Systems 2018". If you are taking this course, please do not duplicate from this repository. All rights reserved.
 
 ---
 ## Description
 
-The sample code `wl_example_siso_ofdm_txrx.m​` follows the following steps.
+The sample code `wl_example_siso_ofdm_txrx.m` follows the following steps.
 1. Generate OFDM transmit samples
 2. Send samples via WARP or Simulation transmission
 3. Decode the received samples
@@ -72,19 +70,21 @@ In the part of decoding,
         ![](res/Rx_waveform.png)
     * Channel Estimates
         ![](res/Channel.png)
-    * Phase Error Estimates / Phase Correction for SFO
+    * Phase Error Estimates and Phase Correction for SFO
         ![](res/Phase.png)
     * LTS Correlation and Threshold
         ![](res/LTS_correlation.png)
     * Tx and Rx Constellations
         ![](res/Constellations.png)
-    * EVM vs. Data Index / EVM vs. (Subcarrier & OFDM Symbol)
+    * EVM vs. Data Index and EVM vs. (Subcarrier & OFDM Symbol)
         ![](res/EVM.png)
     * Decoded SNR and BER
         ![](res/SNR_BER.png)
 
 ---
 ## Contributor
+
+> **NOTICE:** You can follow the contributing process CONTRIBUTING.md to join me. I am very welcome any issue!
 
 * [David Lu](https://github.com/yungshenglu)
 
