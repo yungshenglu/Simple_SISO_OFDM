@@ -84,7 +84,7 @@ In the part of decoding,
 ---
 ## Contributor
 
-> **NOTICE:** You can follow the contributing process CONTRIBUTING.md to join me. I am very welcome any issue!
+> **NOTICE:** You can follow the contributing process [CONTRIBUTING.md](CONTRIBUTING.md) to join me. I am very welcome any issue!
 
 * [David Lu](https://github.com/yungshenglu)
 
