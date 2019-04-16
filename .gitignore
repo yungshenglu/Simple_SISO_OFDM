@@ -1,8 +1,81 @@
-# vscode.config
-.vscode
 
-# object file
+# Created by https://www.gitignore.io/api/c++,matlab,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=c++,matlab,visualstudiocode
+
+### C++ ###
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+### MATLAB ###
+# Windows default autosave extension
+*.asv
+
+# OSX / *nix default autosave extension
 *.m~
 
-# Binary file
-*.bin
+# Compiled MEX binaries (all platforms)
+*.mex*
+
+# Packaged app and toolbox files
+*.mlappinstall
+*.mltbx
+
+# Generated helpsearch folders
+helpsearch*/
+
+# Simulink code generation folders
+slprj/
+sccprj/
+
+# Matlab code generation folders
+codegen/
+
+# Simulink autosave extension
+*.autosave
+
+# Octave session info
+octave-workspace
+
+### VisualStudioCode ###
+.vscode/*
+.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/c++,matlab,visualstudiocode
